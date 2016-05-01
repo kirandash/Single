@@ -4,6 +4,9 @@
  */
 
 get_header(); ?>
+<?php
+	global $more;
+?>
 
 	<div id="primary" class="content-area lander-page">
 		<main id="main" class="site-main" role="main">
@@ -17,6 +20,7 @@ get_header(); ?>
 						if( $query->have_posts() ):
 							while( $query->have_posts() ):
 								$query->the_post();
+								$more = 0;
 								echo '<div class="entry-content">';
 								the_content();
 								echo '</div>';
@@ -44,6 +48,7 @@ get_header(); ?>
                         echo '<ul class="testimonials">';
                         while ( $query->have_posts() ) {
                             $query->the_post();
+							$more = 0;
                             echo '<li class="clear">';
                             echo '<figure class="testimonial-thumb">';
                             the_post_thumbnail('testimonial-mug');
@@ -75,6 +80,7 @@ get_header(); ?>
                     if ( $query->have_posts() ) {
                         while ( $query->have_posts() ) {
                             $query->the_post();
+							$more = 0;
                             echo '<h2 class="section-title">' . get_the_title() . '</h2>';
                             echo '<div class="entry-content">';
                             the_content('');
