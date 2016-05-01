@@ -51,7 +51,7 @@ get_header(); ?>
                             echo '<aside class="testimonial-text">';
                             echo '<h3 class="testimonial-name">' . get_the_title() . '</h3>';
                             echo '<div class="testimonial-excerpt">';
-                            the_content('');
+                            the_excerpt('');
                             echo '</div>';
                             echo '</aside>';
                             echo '</li>';
